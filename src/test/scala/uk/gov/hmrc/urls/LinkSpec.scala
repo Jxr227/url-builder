@@ -17,11 +17,15 @@
 package uk.gov.hmrc.urls
 
 import org.scalatest._
-import org.scalatestplus.play.OneServerPerSuite
+import org.scalatestplus.play.guice.GuiceOneServerPerSuite
+import play.api.i18n.Lang
 
-class LinkSpec extends FunSpecLike with GivenWhenThen with Matchers with OneServerPerSuite {
+class LinkSpec extends FunSpecLike with GivenWhenThen with Matchers with GuiceOneServerPerSuite {
 
   import play.api.i18n.Messages.Implicits._
+
+  implicit val lang = Lang("en")
+
 
   describe("portal page link should") {
 
